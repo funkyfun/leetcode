@@ -30,6 +30,15 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var hasCycle = function(head) {
-    
+const hasCycle = function(head) {
+  let temp = new WeakSet();
+  while(head) {
+    if (temp.has(head)) {
+      return true
+    } else {
+      temp.add(head)
+    }
+    head = head.next
+  }
+  return false
 };
